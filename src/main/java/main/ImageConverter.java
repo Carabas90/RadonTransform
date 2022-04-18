@@ -1,7 +1,6 @@
 package main;
 
 import processing.core.PApplet;
-import processing.core.PGraphics;
 import processing.core.PImage;
 
 public class ImageConverter {
