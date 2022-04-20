@@ -27,12 +27,4 @@ public class RadonTransform extends PApplet {
         transformer = new Transformer(ImageConverter.convertImgToPixelMatrix(this, imgSource));
     }
 
-    private void grayscaleSource() {
-        imgSource.loadPixels();
-        for (int i = 0; i < imgSource.pixels.length;i++ ){
-            int pixel = imgSource.pixels[i];
-            imgSource.pixels[i] = color(brightness(pixel));
-        }
-        imgSource.updatePixels();
-    }
 }
