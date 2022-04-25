@@ -6,13 +6,13 @@ import processing.core.PImage;
 public class RadonTransform extends PApplet {
     private PImage imgSource;
     private int counter;
-    private final String srcPath = "src/main/resources/Elephant.jpg";
+    private final String srcPath = "src/main/resources/quadrat.jpg";
     private Transformer transformer;
 
     public void draw(){
         transformer.calculateResult(counter);
         image(ImageConverter.convertPixelMatrixToImg(this, transformer.getResult()),0,0);
-        if (counter <= 2){
+        if (counter <= 3){
             counter ++;
         }
     }
@@ -24,7 +24,7 @@ public class RadonTransform extends PApplet {
 
     public void setup(){
         frameRate(1);
-        counter = 1;
+        counter = 0;
         imgSource = loadImage(srcPath);
         imgSource.resize(640,640);
         transformer = new Transformer(ImageConverter.convertImgToPixelMatrix(this, imgSource));
