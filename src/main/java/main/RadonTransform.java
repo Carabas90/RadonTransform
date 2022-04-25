@@ -12,6 +12,9 @@ public class RadonTransform extends PApplet {
     public void draw(){
         transformer.calculateResult(counter);
         image(ImageConverter.convertPixelMatrixToImg(this, transformer.getResult()),0,0);
+        if (counter <= 2){
+            counter ++;
+        }
     }
 
     @Override
